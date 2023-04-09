@@ -2,6 +2,10 @@ import machine
 import struct
 import network
 import socket
+import neopixel
+
+# setup led
+np = neopixel.NeoPixel(machine.Pin(27), 1)
 
 # setup servo and motor
 sda_pin = machine.Pin(25)
@@ -55,6 +59,8 @@ ap.active(True)
 # create server socket
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server.bind(('', 12000))
+np[0] = (0,255,0)
+np.write()
 
 while True:
     direction, address_client = server.recvfrom(2048)
