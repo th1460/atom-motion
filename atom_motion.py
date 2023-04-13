@@ -21,17 +21,10 @@ def set_speed(speed):
     struct.pack_into('b', buf, 0, speed)
     i2c.writeto_mem(device, 0, buf)
 
-def get_speed():
-    return struct.unpack('b', i2c.readfrom_mem(device, 0, 1))[0]
-
 def set_angle(angle):
     buf = bytearray(1)
     struct.pack_into('b', buf, 0, angle)
     i2c.writeto_mem(device, 2, buf)
-
-def get_angle():
-    return struct.unpack('b', i2c.readfrom_mem(device, 2, 1))[0]
-
 
 def set_direction(x):
     if x > 200:
@@ -41,7 +34,6 @@ def set_direction(x):
     else:
         set_angle(90)
         
-
 def set_run(x):
     if x > 200:
         set_speed(127)
@@ -59,6 +51,8 @@ ap.active(True)
 # create server socket
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server.bind(('', 12000))
+
+# green led
 np[0] = (0,255,0)
 np.write()
 
