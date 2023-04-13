@@ -5,7 +5,6 @@ import socket
 import neopixel
 import time
 
-
 # setup led
 np = neopixel.NeoPixel(machine.Pin(27), 1)
 
@@ -32,6 +31,8 @@ ap_connect()
 
 # create client socket
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+# green led
 np[0] = (0,255,0)
 np.write()
 
