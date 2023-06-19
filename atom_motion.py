@@ -3,6 +3,11 @@ import struct
 import network
 import socket
 import neopixel
+import utime
+
+# setup uart
+uart = machine.UART(1, tx=19, rx=22)
+uart.init(115200, bits=8, parity=None, stop=1)
 
 # setup led
 np = neopixel.NeoPixel(machine.Pin(27), 1)
@@ -50,16 +55,26 @@ ap.active(True)
 
 # create server socket
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server.bind(('', 12000))
 
-# green led
-np[0] = (0,255,0)
-np.write()
-
 while True:
-    direction, address_client = server.recvfrom(2048)
-    out = struct.unpack('BBB', direction)
-    set_direction(out[0])
-    set_run(out[1])
-    print(out)
-
+    
+    try:
+        status = int(uart.read(1).decode())
+        if status:
+            np[0] = (0,0,255)
+            np.write()
+        else:
+            np[0] = (0, 255, 0)
+            np.write()
+            direction, address_client = server.recvfrom(2048)
+            out = struct.unpack('BBB', direction)
+            set_direction(out[0])
+            set_run(out[1])
+            print(out)
+        print(status)
+    except:
+        pass
+    
+    utime.sleep_ms(500)
