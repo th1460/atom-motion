@@ -62,10 +62,10 @@ while True:
     
     try:
         status = int(uart.read(1).decode())
-        if status:
+        if status == 1:
             np[0] = (0,0,255)
             np.write()
-        else:
+        elif status == 0:
             np[0] = (0, 255, 0)
             np.write()
             direction, address_client = server.recvfrom(2048)
@@ -73,6 +73,9 @@ while True:
             set_direction(out[0])
             set_run(out[1])
             print(out)
+        else:
+            np[0] = (255, 0, 0)
+            np.write()
         print(status)
     except:
         pass
