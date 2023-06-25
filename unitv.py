@@ -16,29 +16,44 @@ sensor.skip_frames(time = 2000)
 
 clock = time.clock()
 
-# setup button
+# setup buttons
 fm.register(18, fm.fpioa.GPIO1)
-button = GPIO(GPIO.GPIO1, GPIO.IN)
+button_a = GPIO(GPIO.GPIO1, GPIO.IN)
+
+fm.register(19, fm.fpioa.GPIO2)
+button_b = GPIO(GPIO.GPIO2, GPIO.IN)
 
 status = True
 i = 0
 
 while True:
-    if not button.value():
+
+    if not button_a.value():
         status = not status
+
     if status:
         print('off')
         out = 1
+
+        if not button_b.value():
+            for j in uos.listdir('/sd'):
+                try:
+                    file_remove = '/sd/' + j
+                    uos.remove(file_remove)
+                    print(file_remove, 'removed')
+
+                except:
+                    pass
+
     else:
         clock.tick()
         img = sensor.snapshot()
         i += 1
-        filename = '/sd/' + str(i) + '.jpg'
-        img.save(filename, quality=95)
-        print('on', filename, 'saved')
+        file_save = '/sd/' + str(i) + '.jpg'
+        img.save(file_save, quality=95)
+        print('on', file_save, 'saved')
         out = 0
 
     uart_out.write(str(out))
     utime.sleep_ms(500)
-
-
+    
