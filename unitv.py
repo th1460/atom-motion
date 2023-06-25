@@ -41,6 +41,7 @@ while True:
                     file_remove = '/sd/' + j
                     uos.remove(file_remove)
                     print(file_remove, 'removed')
+                    out = 2
 
                 except:
                     pass
@@ -56,4 +57,3 @@ while True:
 
     uart_out.write(str(out))
     utime.sleep_ms(500)
-    
