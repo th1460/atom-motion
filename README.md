@@ -1,6 +1,6 @@
 # atom-motion
 
-## Install firmware
+## Install esp32 firmware
 
 To download the firmware: https://micropython.org/download/esp32/
 
