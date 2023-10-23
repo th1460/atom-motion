@@ -1,7 +1,5 @@
 import machine
 import struct
-import network
-import socket
 import neopixel
 import utime
 
@@ -33,9 +31,9 @@ def set_angle(angle):
 
 def set_direction(x):
     if x == 0:
-        set_angle(65)
+        set_angle(75)
     elif x == 1:
-        set_angle(115)
+        set_angle(105)
     else:
         set_angle(90)
         
@@ -53,5 +51,7 @@ while True:
         print(out.decode())
         
         set_direction(int(out))
+        set_speed(99)
     except:
         pass
+
