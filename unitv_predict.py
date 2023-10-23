@@ -22,7 +22,6 @@ sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA)
 sensor.set_windowing(input_size)
 sensor.skip_frames(time = 2000)
-sensor.run(1)
 
 clock = time.clock()
 
@@ -39,7 +38,7 @@ try:
         if pmax > .8:
             max_index=plist.index(pmax)
             out = labels[max_index]
-            print(out)
+            print(out, pmax)
             uart.write(str(out))
         lcd.display(img)
 except Exception as e:
