@@ -1,9 +1,9 @@
 # Atom Motion
 
 
-## Install ESP32 firmware
+## Install ESP32 Micropython firmware
 
-To download the firmware: https://micropython.org/download/esp32/
+Download the firmware: https://micropython.org/download/esp32/
 
     # Install esptool
     pip install esptool
@@ -16,9 +16,21 @@ To download the firmware: https://micropython.org/download/esp32/
 
 ## Atom Motion controled by Joystick
 
+The communication between the joystick and the Atom Lite is established
+via I2C, which transmits the orientation data to the Atom Motion through
+a socket connection. The Atom Motion controls two servos: one with a
+180-degree range and another with a 360-degree range.
+
+- [Joystick
+  code](https://github.com/th1460/atom-motion/blob/main/joystick.py)
+- [Atom Motion
+  code](https://github.com/th1460/atom-motion/blob/main/atom_motion.py)
+
+![](docs/diagram.png)
+
 ``` mermaid
 flowchart LR
-    A[<img src='/docs/joystick.png'/>Joystick]
+    A[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/joystick.png'/>Joystick]
     B[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-lite.png'/>Atom Lite]
     C[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-motion.png'/>Atom Motion]
     D[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/servo-180.png'/>Servo 180]
@@ -27,5 +39,4 @@ flowchart LR
     B -.-> |Socket| C
     C --> |I2C| D
     C --> |I2C| E
-
 ```
