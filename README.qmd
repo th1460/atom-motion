@@ -42,8 +42,10 @@ The communication between the joystick and the Atom Lite is established via I2C,
 
 ![](docs/diagram.png)
 
+```{=html}
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({"securityLevel": "loose", "flowchart": {"htmlLabels": true}});</script>
+```
 
 ```{mermaid}
 flowchart LR
