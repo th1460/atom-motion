@@ -29,8 +29,10 @@ a socket connection. The Atom Motion controls two servos: one with a
 
 ![](docs/diagram.png)
 
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({"securityLevel": "loose", "flowchart": {"htmlLabels": true}});</script>
+
 ``` mermaid
-%%{"securityLevel": "loose", "flowchart": {"htmlLabels": true}}%%
 flowchart LR
     A[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/joystick.png'/>Joystick]
     B[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-lite.png'/>Atom Lite]
