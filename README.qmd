@@ -48,6 +48,8 @@ The communication between the joystick and the Atom Lite is established via I2C,
 ```
 
 ```{mermaid}
+%%{init: {'theme':'forest', 'securityLevel':'loose', 'flowchart': {'htmlLabels': true}}}%%
+
 flowchart LR
     A[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/joystick.png'/>Joystick]
     B[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-lite.png'/>Atom Lite]
