@@ -18,7 +18,7 @@ To download the firmware: https://micropython.org/download/esp32/
 
 ``` mermaid
 flowchart LR
-    A[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/joystick.png'/>Joystick]
+    A[<img src='/docs/joystick.png'/>Joystick]
     B[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-lite.png'/>Atom Lite]
     C[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-motion.png'/>Atom Motion]
     D[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/servo-180.png'/>Servo 180]
