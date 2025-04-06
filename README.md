@@ -17,14 +17,15 @@ To download the firmware: https://micropython.org/download/esp32/
 ## Atom Motion controled by Joystick
 
 ``` mermaid
-graph LR
-    A[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/joystick.png' width='80' height='80' />]
-    B[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-lite.png' width='80' height='80' />]
-    C[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-motion.png' width='80' height='80' />]
-    D[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/servo-180.png' width='80' height='80' />]
-    E[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/servo-360.png' width='80' height='80' />]
+flowchart LR
+    A[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/joystick.png'/>Joystick]
+    B[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-lite.png'/>Atom Lite]
+    C[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-motion.png'/>Atom Motion]
+    D[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/servo-180.png'/>Servo 180]
+    E[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/servo-360.png'/>Servo 360]
     A --> |I2C| B
-    B --> |socket| C
+    B -.-> |Socket| C
     C --> |I2C| D
     C --> |I2C| E
+
 ```
