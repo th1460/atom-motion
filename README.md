@@ -6,20 +6,24 @@
 Download the firmware: https://micropython.org/download/esp32/ and
 followed by
 
-    # Install esptool
-    pip install esptool
+``` bash
+# Install esptool
+virtualenv venv
+source venv/bin/activate
+pip install esptool
 
-    # Erase device
-    esptool.py --port /dev/ttyUSB0 erase_flash
+# Erase device
+esptool.py --port /dev/ttyUSB0 erase_flash
 
-    # Install firmware
-    esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 750000 write_flash -z 0x1000 esp32-20210902-v1.17.bin
+# Install firmware
+esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 750000 write_flash -z 0x1000 esp32-20210902-v1.17.bin
+```
 
 ## Atom Motion controlled by Joystick
 
 The communication between the joystick and the Atom Lite is established
-via I2C, which transmits the orientation data to the Atom Motion through
-a socket connection. The Atom Motion controls two servos: one with a
+via I2C, which transmits the information to the Atom Motion through a
+socket connection. The Atom Motion controls two servos: one with a
 180-degree range and another with a 360-degree range.
 
 - [Joystick
