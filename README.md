@@ -32,3 +32,8 @@ socket connection. The Atom Motion controls two servos: one with a
   code](https://github.com/th1460/atom-motion/blob/main/atom_motion.py)
 
 ![](docs/diagram.png)
+
+  
+
+[![Watch the
+video](https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/cover.png)](https://www.youtube.com/watch?v=GaSCiomFiuk)
