@@ -46,4 +46,9 @@ The communication between the joystick and the Atom Lite is established via I2C,
 
 \
 
-[![Watch the video](https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/cover.png)](https://www.youtube.com/watch?v=GaSCiomFiuk)
+<iframe
+width="640" height="360"
+src="https://www.youtube.com/embed/GaSCiomFiuk?enablejsapi=1"
+frameborder="0"
+style="border: solid 4px #37474F">
+</iframe>
