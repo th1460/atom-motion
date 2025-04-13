@@ -28,11 +28,8 @@ socket connection. The Atom Motion controls two servos: one with a
 
 - [Joystick
   code](https://github.com/th1460/atom-motion/blob/main/joystick.py)
-
-- ## [Atom Motion code](https://github.com/th1460/atom-motion/blob/main/atom_motion.py)
-
-  \#`{mermaid} #flowchart LR #    A[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/joystick.png'/>Joystick] #    B[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-lite.png'/>Atom Lite] #    C[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/atom-motion.png'/>Atom Motion] #    D[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/servo-180.png'/>Servo 180] #    E[<img src='https://raw.githubusercontent.com/th1460/atom-motion/refs/heads/main/docs/servo-360.png'/>Servo 360] #    A --> |I2C| B #    B -.-> |Socket| C #    C --> |I2C| D #    C --> |I2C| E #`
-  —
+- [Atom Motion
+  code](https://github.com/th1460/atom-motion/blob/main/atom_motion.py)
 
 ![](docs/diagram.png)
 

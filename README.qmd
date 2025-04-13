@@ -28,6 +28,7 @@ The communication between the joystick and the Atom Lite is established via I2C,
 
 - [Joystick code](https://github.com/th1460/atom-motion/blob/main/joystick.py)
 - [Atom Motion code](https://github.com/th1460/atom-motion/blob/main/atom_motion.py)
+
 ---
 #```{mermaid}
 #flowchart LR
